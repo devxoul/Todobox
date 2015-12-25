@@ -131,6 +131,8 @@ extension TaskListViewController: UITableViewDelegate {
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         tableView.endUpdates()
 
+        self.saveAll()
+
         if self.tasks.isEmpty {
             self.doneButtonDidTap()
         }
