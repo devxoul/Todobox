@@ -20,7 +20,24 @@ class TaskEditorViewController: UIViewController {
     }
 
     @IBAction func cancelButtonDidTap() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if self.titleInput.text?.isEmpty == true {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            return
+        }
+
+        let yes = UIAlertAction(title: "작성 취소", style: .Destructive) { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        let no = UIAlertAction(title: "계속 작성", style: .Default, handler: nil)
+
+        let alertController = UIAlertController(
+            title: "앗!",
+            message: "취소하면 작성중인 내용이 손실됩니다.\n취소하시겠어요?",
+            preferredStyle: .Alert
+        )
+        alertController.addAction(yes)
+        alertController.addAction(no)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
     @IBAction func doneButtonDidTap() {
