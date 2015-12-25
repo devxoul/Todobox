@@ -130,6 +130,10 @@ extension TaskListViewController: UITableViewDelegate {
         self.tasks.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         tableView.endUpdates()
+
+        if self.tasks.isEmpty {
+            self.doneButtonDidTap()
+        }
     }
 
 }
