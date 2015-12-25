@@ -41,6 +41,22 @@ class TaskListViewController: UIViewController {
         }
     }
 
+    /// `tasks`를 로컬에 저장합니다.
+    func saveAll() {
+        let data = self.tasks.map {
+            [
+                "title": $0.title,
+                "done": $0.done,
+            ]
+        }
+
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(data, forKey: TodoboxTasksUserDefaultsKey)
+        userDefaults.synchronize()
+    }
+
+    }
+
 }
 
 
