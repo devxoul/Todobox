@@ -19,10 +19,6 @@ class TaskListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tasks.append(Task(title: "메일 보내기", done: true))
-        self.tasks.append(Task(title: "점심 뭐먹을지 생각하기", done: true))
-        self.tasks.append(Task(title: "저녁 뭐먹을지 생각하기"))
-        self.tasks.append(Task(title: "방 정리"))
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
