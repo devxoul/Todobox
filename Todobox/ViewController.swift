@@ -42,7 +42,13 @@ extension ViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = self.tasks[indexPath.row].title
+        let task = self.tasks[indexPath.row]
+        cell.textLabel?.text = task.title
+        if task.done {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
         return cell
     }
 
