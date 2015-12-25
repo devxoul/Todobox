@@ -69,7 +69,7 @@
         <!--할 일 추가-->
         <scene sceneID="ine-R1-ZEv">
             <objects>
-                <viewController id="W3M-uH-1WC" sceneMemberID="viewController">
+                <viewController id="W3M-uH-1WC" customClass="TaskEditorViewController" customModule="Todobox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYg-5e-FvE"/>
                         <viewControllerLayoutGuide type="bottom" id="GIb-Do-C0b"/>
