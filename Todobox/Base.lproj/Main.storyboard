@@ -97,7 +97,11 @@
                                 <action selector="cancelButtonDidTap" destination="W3M-uH-1WC" id="MrF-Qt-9DW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="K3L-6S-QVK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="K3L-6S-QVK">
+                            <connections>
+                                <action selector="doneButtonDidTap" destination="W3M-uH-1WC" id="NUW-6C-u4W"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWB-st-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
