@@ -31,6 +31,9 @@
                             <constraint firstItem="sEq-BJ-CoM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="zYy-De-EUa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sEq-BJ-CoM" id="SHd-cn-fQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
