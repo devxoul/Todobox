@@ -14,4 +14,7 @@ class TaskEditorViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func doneButtonDidTap() {
+    }
+
 }
