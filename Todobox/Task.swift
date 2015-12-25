@@ -9,4 +9,9 @@
 struct Task {
     var title: String
     var done: Bool = false
+
+    init(title: String, done: Bool = false) {
+        self.title = title
+        self.done = done
+    }
 }
