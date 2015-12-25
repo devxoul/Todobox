@@ -20,6 +20,8 @@ class TaskEditorViewController: UIViewController {
     }
 
     @IBAction func cancelButtonDidTap() {
+        self.titleInput.resignFirstResponder()
+
         if self.titleInput.text?.isEmpty == true {
             self.dismissViewControllerAnimated(true, completion: nil)
             return
