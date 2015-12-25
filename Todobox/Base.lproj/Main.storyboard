@@ -79,7 +79,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="할 일 추가" id="gMM-cQ-J6s"/>
+                    <navigationItem key="navigationItem" title="할 일 추가" id="gMM-cQ-J6s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HO2-xK-Lw4"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWB-st-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
