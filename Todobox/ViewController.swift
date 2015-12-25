@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,10 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
         cell.textLabel?.text = String(indexPath.row)
         return cell
     }
