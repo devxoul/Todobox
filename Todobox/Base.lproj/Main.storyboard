@@ -36,7 +36,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todobox" id="DmU-tO-yWu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="s2Y-pc-TLA"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="s2Y-pc-TLA">
+                            <connections>
+                                <action selector="editButtonDidTap" destination="BYZ-38-t0r" id="Bxa-Zh-k6r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P8I-PD-srE">
                             <connections>
                                 <segue destination="COw-Gh-Rs5" kind="showDetail" id="qIa-h2-xqp"/>
