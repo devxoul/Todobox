@@ -17,7 +17,11 @@ class TaskListViewController: UIViewController {
     let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: nil, action: "doneButtonDidTap")
 
     /// 할 일 목록
-    var tasks = [Task]()
+    var tasks = [Task]() {
+        didSet {
+            self.saveAll()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +42,6 @@ class TaskListViewController: UIViewController {
            let taskEditorViewController = navigationController.viewControllers.first as? TaskEditorViewController {
             taskEditorViewController.didAddHandler = { task in
                 self.tasks.append(task)
-                self.saveAll()
                 self.tableView.reloadData()
             }
         }
@@ -121,7 +124,6 @@ extension TaskListViewController: UITableViewDelegate {
         task.done = !task.done
         self.tasks[indexPath.row] = task
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        self.saveAll()
     }
 
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -132,7 +134,6 @@ extension TaskListViewController: UITableViewDelegate {
         let source = self.tasks[sourceIndexPath.row]
         self.tasks[sourceIndexPath.row] = self.tasks[destinationIndexPath.row]
         self.tasks[destinationIndexPath.row] = source
-        self.saveAll()
     }
 
     func tableView(tableView: UITableView,
@@ -142,8 +143,6 @@ extension TaskListViewController: UITableViewDelegate {
         self.tasks.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         tableView.endUpdates()
-
-        self.saveAll()
 
         if self.tasks.isEmpty {
             self.doneButtonDidTap()
