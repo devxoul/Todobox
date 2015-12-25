@@ -25,11 +25,24 @@ class TaskEditorViewController: UIViewController {
 
     @IBAction func doneButtonDidTap() {
         guard let title = self.titleInput.text where !title.isEmpty else {
+            self.shakeTitleInput()
             return
         }
         let newTask = Task(title: title)
         self.didAddHandler?(newTask)
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func shakeTitleInput() {
+        UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x -= 5 }) { _ in
+            UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x += 10 }) { _ in
+                UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x -= 10 }) { _ in
+                    UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x += 10 }) { _ in
+                        UIView.animateWithDuration(0.05) { self.titleInput.frame.origin.x -= 5 }
+                    }
+                }
+            }
+        }
     }
 
 }
