@@ -49,6 +49,9 @@ class TaskEditorViewController: UIViewController {
             self.shakeTitleInput()
             return
         }
+
+        self.titleInput.resignFirstResponder()
+
         let newTask = Task(title: title)
         self.didAddHandler?(newTask)
         self.dismissViewControllerAnimated(true, completion: nil)
