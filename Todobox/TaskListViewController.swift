@@ -121,6 +121,7 @@ extension TaskListViewController: UITableViewDelegate {
         task.done = !task.done
         self.tasks[indexPath.row] = task
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        self.saveAll()
     }
 
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
