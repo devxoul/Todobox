@@ -29,6 +29,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let navigationController = segue.destinationViewController as? UINavigationController,
+           let taskEditorViewController = navigationController.viewControllers.first as? TaskEditorViewController {
+            taskEditorViewController.didAddHandler = { task in
+                self.tasks.append(task)
+                self.tableView.reloadData()
+            }
+        }
+    }
+
 }
 
 
