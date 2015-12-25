@@ -8,6 +8,8 @@
 
 import UIKit
 
+let TodoboxTasksUserDefaultsKey = "TodoboxTasksUserDefaultsKey"
+
 class TaskListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
