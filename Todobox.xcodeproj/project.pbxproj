@@ -13,6 +13,7 @@
 		0367ED821C2DAF7900D84526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367ED811C2DAF7900D84526 /* Assets.xcassets */; };
 		0367ED851C2DAF7900D84526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0367ED831C2DAF7900D84526 /* LaunchScreen.storyboard */; };
 		0367ED8D1C2DB40300D84526 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367ED8C1C2DB40300D84526 /* Task.swift */; };
+		0367ED8F1C2DB84900D84526 /* TaskEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367ED8E1C2DB84900D84526 /* TaskEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0367ED841C2DAF7900D84526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0367ED861C2DAF7900D84526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0367ED8C1C2DB40300D84526 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0367ED8E1C2DB84900D84526 /* TaskEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0367ED7A1C2DAF7900D84526 /* AppDelegate.swift */,
 				0367ED7C1C2DAF7900D84526 /* ViewController.swift */,
+				0367ED8E1C2DB84900D84526 /* TaskEditorViewController.swift */,
 				0367ED8C1C2DB40300D84526 /* Task.swift */,
 				0367ED7E1C2DAF7900D84526 /* Main.storyboard */,
 				0367ED811C2DAF7900D84526 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				0367ED7D1C2DAF7900D84526 /* ViewController.swift in Sources */,
 				0367ED8D1C2DB40300D84526 /* Task.swift in Sources */,
+				0367ED8F1C2DB84900D84526 /* TaskEditorViewController.swift in Sources */,
 				0367ED7B1C2DAF7900D84526 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
