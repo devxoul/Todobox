@@ -10,6 +10,8 @@ import UIKit
 
 class TaskEditorViewController: UIViewController {
 
+    @IBOutlet var titleInput: UITextField!
+
     @IBAction func cancelButtonDidTap() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
