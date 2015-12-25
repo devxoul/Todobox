@@ -59,4 +59,10 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var task = self.tasks[indexPath.row]
+        task.done = !task.done
+        self.tasks[indexPath.row] = task
+    }
+
 }
