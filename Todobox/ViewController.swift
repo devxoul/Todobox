@@ -33,12 +33,12 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.tasks.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = String(indexPath.row)
+        cell.textLabel?.text = self.tasks[indexPath.row]
         return cell
     }
 
