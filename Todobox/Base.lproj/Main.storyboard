@@ -36,7 +36,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todobox" id="DmU-tO-yWu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P8I-PD-srE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P8I-PD-srE">
+                            <connections>
+                                <segue destination="COw-Gh-Rs5" kind="showDetail" id="qIa-h2-xqp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sEq-BJ-CoM" id="SHd-cn-fQ8"/>
