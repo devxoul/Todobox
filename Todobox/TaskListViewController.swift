@@ -14,6 +14,7 @@ class TaskListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var editButton: UIBarButtonItem!
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: nil, action: "doneButtonDidTap")
 
     /// 할 일 목록
     var tasks = [Task]()
