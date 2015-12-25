@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
+    /// 할 일 목록
+    var tasks = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
