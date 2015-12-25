@@ -56,6 +56,19 @@ class TaskListViewController: UIViewController {
         userDefaults.synchronize()
     }
 
+    func loadAll() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        guard let data = userDefaults.objectForKey(TodoboxTasksUserDefaultsKey) as? [[String: AnyObject]] else {
+            return
+        }
+
+        self.tasks = data.flatMap {
+            guard let title = $0["title"] as? String else {
+                return nil
+            }
+            let done = $0["done"]?.boolValue == true
+            return Task(title: title, done: done)
+        }
     }
 
 }
