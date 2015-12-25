@@ -123,4 +123,13 @@ extension TaskListViewController: UITableViewDelegate {
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
+    func tableView(tableView: UITableView,
+                   commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+                   forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.beginUpdates()
+        self.tasks.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        tableView.endUpdates()
+    }
+
 }
