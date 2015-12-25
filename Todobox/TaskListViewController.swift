@@ -36,6 +36,7 @@ class TaskListViewController: UIViewController {
            let taskEditorViewController = navigationController.viewControllers.first as? TaskEditorViewController {
             taskEditorViewController.didAddHandler = { task in
                 self.tasks.append(task)
+                self.saveAll()
                 self.tableView.reloadData()
             }
         }
