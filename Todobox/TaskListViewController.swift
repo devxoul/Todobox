@@ -78,12 +78,12 @@ class TaskListViewController: UIViewController {
             return
         }
         self.navigationItem.leftBarButtonItem = self.doneButton
-        self.tableView.editing = true
+        self.tableView.setEditing(true, animated: true)
     }
 
     dynamic func doneButtonDidTap() {
         self.navigationItem.leftBarButtonItem = self.editButton
-        self.tableView.editing = false
+        self.tableView.setEditing(false, animated: true)
     }
 
 }
