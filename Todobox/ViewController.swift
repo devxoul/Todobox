@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
@@ -22,6 +22,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
@@ -33,4 +40,3 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
 }
-
