@@ -29,7 +29,6 @@ class TaskListViewController: UIViewController {
         self.loadAll()
 
         self.doneButton.target = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
