@@ -13,6 +13,7 @@ let TodoboxTasksUserDefaultsKey = "TodoboxTasksUserDefaultsKey"
 class TaskListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var editButton: UIBarButtonItem!
 
     /// 할 일 목록
     var tasks = [Task]()
@@ -71,7 +72,6 @@ class TaskListViewController: UIViewController {
     }
 
     @IBAction func editButtonDidTap() {
-
     }
 
 }
