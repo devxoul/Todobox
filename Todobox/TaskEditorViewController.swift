@@ -30,7 +30,9 @@ class TaskEditorViewController: UIViewController {
         let yes = UIAlertAction(title: "작성 취소", style: .Destructive) { _ in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        let no = UIAlertAction(title: "계속 작성", style: .Default, handler: nil)
+        let no = UIAlertAction(title: "계속 작성", style: .Default) { _ in
+            self.titleInput.becomeFirstResponder()
+        }
 
         let alertController = UIAlertController(
             title: "앗!",
