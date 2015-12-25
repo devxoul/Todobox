@@ -12,6 +12,8 @@ class TaskEditorViewController: UIViewController {
 
     @IBOutlet var titleInput: UITextField!
 
+    var didAddHandler: (Task -> Void)?
+
     @IBAction func cancelButtonDidTap() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
