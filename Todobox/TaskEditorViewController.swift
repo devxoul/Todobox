@@ -14,6 +14,11 @@ class TaskEditorViewController: UIViewController {
 
     var didAddHandler: (Task -> Void)?
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.titleInput.becomeFirstResponder()
+    }
+
     @IBAction func cancelButtonDidTap() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
