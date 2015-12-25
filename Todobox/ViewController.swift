@@ -53,3 +53,10 @@ extension ViewController: UITableViewDataSource {
     }
 
 }
+
+
+// MARK: - UITableViewDelegate
+
+extension ViewController: UITableViewDelegate {
+
+}
