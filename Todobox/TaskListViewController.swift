@@ -74,6 +74,9 @@ class TaskListViewController: UIViewController {
     }
 
     @IBAction func editButtonDidTap() {
+        guard !self.tasks.isEmpty else {
+            return
+        }
         self.navigationItem.leftBarButtonItem = self.doneButton
     }
 
