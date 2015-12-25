@@ -103,6 +103,7 @@ extension TaskListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
         let task = self.tasks[indexPath.row]
         cell.textLabel?.text = task.title
+        cell.detailTextLabel?.text = task.note
         if task.done {
             cell.accessoryType = .Checkmark
         } else {
