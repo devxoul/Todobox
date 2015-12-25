@@ -80,7 +80,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="할 일 추가" id="gMM-cQ-J6s">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HO2-xK-Lw4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HO2-xK-Lw4">
+                            <connections>
+                                <action selector="cancelButtonDidTap" destination="W3M-uH-1WC" id="MrF-Qt-9DW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWB-st-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
