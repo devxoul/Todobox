@@ -63,6 +63,7 @@ extension ViewController: UITableViewDelegate {
         var task = self.tasks[indexPath.row]
         task.done = !task.done
         self.tasks[indexPath.row] = task
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
 }
