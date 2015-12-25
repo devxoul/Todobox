@@ -17,6 +17,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tasks.append("메일 보내기")
+        self.tasks.append("점심 뭐먹을지 생각하기")
+        self.tasks.append("저녁 뭐먹을지 생각하기")
+        self.tasks.append("방 정리")
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
