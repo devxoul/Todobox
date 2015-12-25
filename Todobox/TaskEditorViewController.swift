@@ -11,7 +11,7 @@ import UIKit
 class TaskEditorViewController: UIViewController {
 
     @IBAction func cancelButtonDidTap() {
-
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
