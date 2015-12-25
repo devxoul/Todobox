@@ -35,7 +35,9 @@
                             <constraint firstItem="sEq-BJ-CoM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="zYy-De-EUa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Todobox" id="DmU-tO-yWu"/>
+                    <navigationItem key="navigationItem" title="Todobox" id="DmU-tO-yWu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P8I-PD-srE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sEq-BJ-CoM" id="SHd-cn-fQ8"/>
                     </connections>
