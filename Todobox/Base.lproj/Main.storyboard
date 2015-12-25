@@ -103,6 +103,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleInput" destination="kLO-sJ-Dp5" id="Spj-D5-CYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWB-st-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
