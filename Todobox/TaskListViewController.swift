@@ -70,6 +70,10 @@ class TaskListViewController: UIViewController {
         }
     }
 
+    @IBAction func editButtonDidTap() {
+
+    }
+
 }
 
 
