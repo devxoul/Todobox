@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
     /// 할 일 목록
-    var tasks = [String]()
+    var tasks = [Task]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tasks.append("메일 보내기")
-        self.tasks.append("점심 뭐먹을지 생각하기")
-        self.tasks.append("저녁 뭐먹을지 생각하기")
-        self.tasks.append("방 정리")
+        self.tasks.append(Task(title: "메일 보내기"))
+        self.tasks.append(Task(title: "점심 뭐먹을지 생각하기"))
+        self.tasks.append(Task(title: "저녁 뭐먹을지 생각하기"))
+        self.tasks.append(Task(title: "방 정리"))
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
@@ -42,7 +42,7 @@ extension ViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = self.tasks[indexPath.row]
+        cell.textLabel?.text = self.tasks[indexPath.row].title
         return cell
     }
 
