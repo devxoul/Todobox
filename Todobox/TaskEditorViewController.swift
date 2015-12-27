@@ -53,7 +53,7 @@ class TaskEditorViewController: UIViewController {
 
         self.titleInput.resignFirstResponder()
 
-        let newTask = Task(title: title)
+        let newTask = Task(title: title, note: self.textView.text)
         self.didAddHandler?(newTask)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
