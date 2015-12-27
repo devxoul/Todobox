@@ -148,6 +148,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="textView" destination="xnD-Nn-gBq" id="HyT-SQ-iWM"/>
                         <outlet property="titleInput" destination="kLO-sJ-Dp5" id="Spj-D5-CYB"/>
                     </connections>
                 </viewController>
