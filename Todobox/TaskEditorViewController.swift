@@ -11,6 +11,7 @@ import UIKit
 class TaskEditorViewController: UIViewController {
 
     @IBOutlet var titleInput: UITextField!
+    @IBOutlet var textView: UITextView!
 
     var didAddHandler: (Task -> Void)?
 
