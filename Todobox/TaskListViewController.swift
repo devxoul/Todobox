@@ -131,9 +131,11 @@ extension TaskListViewController: UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let source = self.tasks[sourceIndexPath.row]
-        self.tasks[sourceIndexPath.row] = self.tasks[destinationIndexPath.row]
-        self.tasks[destinationIndexPath.row] = source
+        var tasks = self.tasks
+        let task = tasks[sourceIndexPath.row]
+        tasks.removeAtIndex(sourceIndexPath.row)
+        tasks.insert(task, atIndex: destinationIndexPath.row)
+        self.tasks = tasks
     }
 
     func tableView(tableView: UITableView,
