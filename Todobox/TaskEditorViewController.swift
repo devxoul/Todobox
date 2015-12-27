@@ -15,6 +15,13 @@ class TaskEditorViewController: UIViewController {
 
     var didAddHandler: (Task -> Void)?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.textView.layer.cornerRadius = 5
+        self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.textView.layer.borderWidth = 1 / UIScreen.mainScreen().scale
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.titleInput.becomeFirstResponder()
