@@ -115,12 +115,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-Nn-gBq">
+                                <rect key="frame" x="20" y="124" width="560" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JL4-hJ-Llp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kLO-sJ-Dp5" firstAttribute="top" secondItem="WYg-5e-FvE" secondAttribute="bottom" constant="20" id="3kB-rl-TXf"/>
+                            <constraint firstAttribute="trailing" secondItem="xnD-Nn-gBq" secondAttribute="trailing" constant="20" id="NJv-rr-1AN"/>
                             <constraint firstItem="kLO-sJ-Dp5" firstAttribute="trailing" secondItem="CS4-EQ-Wcn" secondAttribute="trailing" constant="-20" id="P3Q-oU-3Dw"/>
+                            <constraint firstItem="xnD-Nn-gBq" firstAttribute="leading" secondItem="CS4-EQ-Wcn" secondAttribute="leading" constant="20" id="U7t-pl-4ec"/>
                             <constraint firstItem="kLO-sJ-Dp5" firstAttribute="leading" secondItem="CS4-EQ-Wcn" secondAttribute="leading" constant="20" id="jKd-Zd-QNK"/>
+                            <constraint firstItem="xnD-Nn-gBq" firstAttribute="top" secondItem="kLO-sJ-Dp5" secondAttribute="bottom" constant="10" id="mLX-Yx-VBt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="할 일 추가" id="gMM-cQ-J6s">
