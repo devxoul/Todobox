@@ -10,71 +10,71 @@ import UIKit
 
 class TaskEditorViewController: UIViewController {
 
-    @IBOutlet var titleInput: UITextField!
-    @IBOutlet var textView: UITextView!
+  @IBOutlet var titleInput: UITextField!
+  @IBOutlet var textView: UITextView!
 
-    var didAddHandler: (Task -> Void)?
+  var didAddHandler: ((Task) -> Void)?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.textView.layer.cornerRadius = 5
-        self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        self.textView.layer.borderWidth = 1 / UIScreen.mainScreen().scale
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.textView.layer.cornerRadius = 5
+    self.textView.layer.borderColor = UIColor.lightGray.cgColor
+    self.textView.layer.borderWidth = 1 / UIScreen.main.scale
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.titleInput.becomeFirstResponder()
+  }
+
+  @IBAction func cancelButtonDidTap() {
+    self.titleInput.resignFirstResponder()
+
+    if self.titleInput.text?.isEmpty == true {
+      self.dismiss(animated: true, completion: nil)
+      return
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.titleInput.becomeFirstResponder()
+    let yes = UIAlertAction(title: "작성 취소", style: .destructive) { _ in
+      self.dismiss(animated: true, completion: nil)
+    }
+    let no = UIAlertAction(title: "계속 작성", style: .default) { _ in
+      self.titleInput.becomeFirstResponder()
     }
 
-    @IBAction func cancelButtonDidTap() {
-        self.titleInput.resignFirstResponder()
+    let alertController = UIAlertController(
+      title: "앗!",
+      message: "취소하면 작성중인 내용이 손실됩니다.\n취소하시겠어요?",
+      preferredStyle: .alert
+    )
+    alertController.addAction(yes)
+    alertController.addAction(no)
+    self.present(alertController, animated: true, completion: nil)
+  }
 
-        if self.titleInput.text?.isEmpty == true {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            return
-        }
-
-        let yes = UIAlertAction(title: "작성 취소", style: .Destructive) { _ in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        let no = UIAlertAction(title: "계속 작성", style: .Default) { _ in
-            self.titleInput.becomeFirstResponder()
-        }
-
-        let alertController = UIAlertController(
-            title: "앗!",
-            message: "취소하면 작성중인 내용이 손실됩니다.\n취소하시겠어요?",
-            preferredStyle: .Alert
-        )
-        alertController.addAction(yes)
-        alertController.addAction(no)
-        self.presentViewController(alertController, animated: true, completion: nil)
+  @IBAction func doneButtonDidTap() {
+    guard let title = self.titleInput.text, !title.isEmpty else {
+      self.shakeTitleInput()
+      return
     }
 
-    @IBAction func doneButtonDidTap() {
-        guard let title = self.titleInput.text where !title.isEmpty else {
-            self.shakeTitleInput()
-            return
-        }
+    self.titleInput.resignFirstResponder()
 
-        self.titleInput.resignFirstResponder()
+    let newTask = Task(title: title, note: self.textView.text)
+    self.didAddHandler?(newTask)
+    self.dismiss(animated: true, completion: nil)
+  }
 
-        let newTask = Task(title: title, note: self.textView.text)
-        self.didAddHandler?(newTask)
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    func shakeTitleInput() {
-        UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x -= 5 }) { _ in
-            UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x += 10 }) { _ in
-                UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x -= 10 }) { _ in
-                    UIView.animateWithDuration(0.05, animations: { self.titleInput.frame.origin.x += 10 }) { _ in
-                        UIView.animateWithDuration(0.05) { self.titleInput.frame.origin.x -= 5 }
-                    }
-                }
-            }
-        }
-    }
+  func shakeTitleInput() {
+    UIView.animate(withDuration: 0.05, animations: { self.titleInput.frame.origin.x -= 5 }, completion: { _ in
+      UIView.animate(withDuration: 0.05, animations: { self.titleInput.frame.origin.x += 10 }, completion: { _ in
+        UIView.animate(withDuration: 0.05, animations: { self.titleInput.frame.origin.x -= 10 }, completion: { _ in
+          UIView.animate(withDuration: 0.05, animations: { self.titleInput.frame.origin.x += 10 }, completion: { _ in
+            UIView.animate(withDuration: 0.05, animations: { self.titleInput.frame.origin.x -= 5 })
+          })
+        })
+      })
+    })
+  }
 
 }
